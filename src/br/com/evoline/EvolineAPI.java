@@ -232,5 +232,19 @@ public class EvolineAPI {
 		return this.sendRequest("/audio/relatorio?data_inicio=" + dataInicio + "&data_fim=" + dataFim, "GET");
 	}
 
+	public JSONObject criarRamal(JSONObject data) {
+		return this.sendRequest("/ramal", "POST", data.toString());
+	}
 
+	public JSONObject atualizarRamal(int id, JSONObject data) {
+		return this.sendRequest("/ramal/"+id, "PUT", data.toString());
+	}
+
+	public JSONObject criarURA(JSONObject data) {
+		return this.sendRequest("/ura", "POST", data.toString());
+	}
+
+	public JSONObject atualizarURA(int id, JSONObject data) {
+		return this.sendRequest("/ura/"+id, "PUT", data.toString());
+	}
 }
